@@ -2,7 +2,8 @@ name: Sync to Hugging Face hub
 on:
   push:
     branches: [main]
-  force_push: true
+  workflow_dispatch:
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
