@@ -1,5 +1,5 @@
 import streamlit as st
-from openai import OpenAI
+from langchain_openai import ChatOpenAI
 import os
 
 
@@ -94,4 +94,5 @@ if submit_button:
                 st.write(answer)
             except Exception as e:
                 st.error(f"エラーが発生しました。APIキーの設定などをご確認ください。\n詳細: {e}")
+
 
