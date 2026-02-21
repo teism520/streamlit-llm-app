@@ -1,6 +1,11 @@
 import streamlit as st
-from langchain_openai import ChatOpenAI
-from langchain_core.prompts import ChatPromptTemplate
+from openai import OpenAI
+import os
+
+
+client = OpenAI(
+    api_key=os.environ.get("OPENAI_API_KEY") 
+)
 
 # ==========================================
 # 1. 関数の定義
@@ -89,3 +94,4 @@ if submit_button:
                 st.write(answer)
             except Exception as e:
                 st.error(f"エラーが発生しました。APIキーの設定などをご確認ください。\n詳細: {e}")
+
